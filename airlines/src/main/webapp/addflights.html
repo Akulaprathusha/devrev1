@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Search</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .background-image {
+      background-image: url("images/airlines_addflight.jpg");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    
+    .container {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 700px;
+      height:550px;
+      margin: 0 auto;
+      margin-top: 100px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .top-bar {
+      background-color: #751a47;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center; /* Center the links horizontally */
+      align-items: center;
+    }
+    
+    .top-bar a {
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 70px;
+      margin-left: 40px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: white;
+    }
+    
+    .form {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    
+    .form-group {
+      flex-basis: 45%;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #751a47;
+    }
+    
+    input {
+      width: 75%;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    select {
+      width: 75%;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .search-button button {
+      padding: 10px 20px;
+      background-color: #751a47;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .search-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    .bottom-button {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+}
+
+.bottom-button button {
+  padding: 10px 20px;
+  background-color: #751a47;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+  </style>
+  <script>
+    function increment() {
+      var input = document.getElementById("middle-num");
+      var value = parseInt(input.value);
+      input.value = value + 1;
+    }
+    
+    function decrement() {
+      var input = document.getElementById("middle-num");
+      var value = parseInt(input.value);
+      if (value > 1) {
+        input.value = value - 1;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="background-image"></div>
+  <form method="post" action="admin_addflights">
+  <div class="container">
+    <div class="top-bar">
+      <a href="#" style="color: black;" onclick="location.href='addflights.html'">Add Flights</a>
+      <a href="#" style="color: black;" onclick="location.href='admin_viewallflights.jsp'">View All Flights</a>
+    </div>
+   
+    <div class="form">
+      <div class="form-group">
+        <label for="flight-id">Flight ID:</label>
+        <input type="text" id="flight-id" name="flightId" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Departure Date:</label>
+        <input type="date" id="date" name="departureDate" required>
+      </div>
+    </div>
+    
+    <div class="form">
+      <div class="form-group">
+        <label for="from">Departure Airport:</label>
+        <input type="text" id="from" name="departureAirport" required>
+      </div>
+      <div class="form-group">
+        <label for="to">Destination Airport:</label>
+        <input type="text" id="to" name="destinationAirport" required>
+      </div>
+    </div>
+    
+    <div class="form">
+      <div class="form-group">
+        <label for="departure-time">Departure Time:</label>
+        <input type="time" id="departure-time" name="departureTime" required>
+      </div>
+      <div class="form-group">
+        <label for="arrival-time">Arrival Time:</label>
+        <input type="time" id="arrival-time" name="arrivalTime" required>
+      </div>
+    </div>
+    
+    <div class="form">
+    <div class="form-group">
+      <label for="economy-seats">Economy Seats:</label>
+      <input type="number" id="economy-seats" name="economySeats" value="1" style="width: 10%;" required>
+    </div>
+    <div class="form-group">
+      <label for="economy-price">Economy Price:</label>
+      <input type="textbox" id="economy-price" name="economyPrice" style="width: 10%;" required>
+    </div>
+  </div>
+  
+  <div class="form">
+    <div class="form-group">
+      <label for="business-seats">Business Seats:</label>
+      <input type="number" id="business-seats" name="businessSeats" value="1" style="width: 10%;" required>
+    </div>
+    <div class="form-group">
+      <label for="business-price">Business Price:</label>
+      <input type="textbox" id="business-price" name="businessPrice" style="width: 10%;" required>
+    </div>
+  </div>
+    
+    <div class="search-button">
+      <button type="submit" class="action">Add Flight</button>
+    </div>
+    <div class="bottom-button">
+    <button type="button" onclick="location.href='homepage.html'">Logout</button>
+  </div>
+    </form>
+  </div>
+</body>
+</html>

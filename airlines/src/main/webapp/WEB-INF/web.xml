@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<welcome-file-list>
+		<welcome-file>homepage.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+        <servlet-name>User_registration</servlet-name>
+        <servlet-class>User_registration</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>User_registration</servlet-name>
+        <url-pattern>/User_registration</url-pattern>
+    </servlet-mapping>
+   
+   	<servlet>
+        <servlet-name>user_login</servlet-name>
+        <servlet-class>user_login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>user_login</servlet-name>
+        <url-pattern>/user_login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>admin_login</servlet-name>
+        <servlet-class>admin_login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin_login</servlet-name>
+        <url-pattern>/admin_login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>admin_addflights</servlet-name>
+        <servlet-class>admin_addflights</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin_addflights</servlet-name>
+        <url-pattern>/admin_addflights</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>admin_deleteflight</servlet-name>
+        <servlet-class>admin_deleteflight</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin_deleteflight</servlet-name>
+        <url-pattern>/admin_deleteflight</url-pattern>
+    </servlet-mapping>
+   
+</web-app>

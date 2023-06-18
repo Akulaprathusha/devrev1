@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Search</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .background-image {
+      background-image: url("images/airlines_searchflight.jpg");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    
+    .container {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 700px;
+      height: 450px;
+      margin: 0 auto;
+      margin-top: 100px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .top-bar {
+      background-color: #ffd900;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center; /* Center the links horizontally */
+      align-items: center;
+    }
+    
+    .top-bar a {
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 70px;
+      margin-left: 40px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: white;
+    }
+    
+    .form {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    
+    .form-group {
+      flex-basis: 45%;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #ffd900;
+    }
+    
+    input {
+      width: 75%;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    select {
+      width: 75%;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .search-button button {
+      padding: 10px 20px;
+      background-color: #ffd900;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .search-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+  </style>
+  <script>
+    function increment() {
+      var input = document.getElementById("middle-num");
+      var value = parseInt(input.value);
+      input.value = value + 1;
+    }
+    
+    function decrement() {
+      var input = document.getElementById("middle-num");
+      var value = parseInt(input.value);
+      if (value > 1) {
+        input.value = value - 1;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="background-image"></div>
+  <form method="post" action="searchflights.jsp">
+  <div class="container">
+    <div class="top-bar">
+    <!--  <a href="#" style="color: black;">One Way</a>
+      <a href="#" style="color: black;" onclick="location.href='roundtrip.html'">Round Trip</a>
+    
+       -->
+       <p>SearchFlights</p>
+    </div>
+   
+    <div class="form">
+      <div class="form-group">
+        <label for="from">From:</label>
+        <input type="text" id="from" name="from" required>
+      </div>
+      <div class="form-group">
+        <label for="to">To:</label>
+        <input type="text" id="to" name="to" required>
+      </div>
+    </div>
+    
+    <div class="form">
+      <div class="form-group">
+        <label for="depart">Depart:</label>
+        <input type="date" id="depart" name="depart" style="width: 50%;" required>
+      </div>
+    </div>
+    
+    <div class="form">
+      <div class="form-group">
+        <label for="class">Class:</label>
+        <select id="class" name="classType">
+          <option value="economy">Economy</option>
+          <option value="business">Business</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form">
+      <div class="form-group">
+        <label for="middle-num">Seats:</label>
+        <div class="counter-container">
+          <button class="counter-btn" onclick="decrement()">-</button>
+          <input type="number" id="middle-num" name="seats" value="1" style="width: 10%;" required>
+          <button class="counter-btn" onclick="increment()">+</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="search-button">
+      <button type="submit" class="action" onclick="location.href='searchflights.jsp'">Search Flights</button>
+    </div>
+    </form>
+  </div>
+</body>
+</html>
